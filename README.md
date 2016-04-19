@@ -8,11 +8,11 @@
 
 #### [Download Editable Sketch & JPG Files](http://media.yellow7.com/development/y7-frontend_test.zip)
 
-The goal of this test project is to turn a Sketch/JPG file into a working, **responsive** website. It is only one-page which consists a header with logo and navigation, carousel banner, two column body content, and a simple footer.
+The goal of this test project is to turn a Sketch/JPG file into a working, **responsive** website. It is only one-page which consists of a header with logo and navigation, carousel banner, two column body content, and a simple footer.
 
 Since this needs to be responsive, use your discretion for how the layout will adapt to tablet and mobile.
 
-> *Hint: There is already a media query declared using a Foundation mixins if you are not familiar with this framework*
+> *Hint: There is already a media query declared using a Foundation mixin if you are not familiar with this framework*
 
 This project is open-ended to interpret your own functionality for the content.
 
