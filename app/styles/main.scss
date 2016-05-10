@@ -2,7 +2,6 @@
 // Variables
 // -----------------------------------------------------------------------------
 
-@import "variables/global";
 @import "variables/motionui";
 
 
@@ -15,8 +14,8 @@
 // -----------------------------------------------------------------------------
 
 // bower:scss
-@import "bower_components/foundation-sites/scss/foundation.scss";
 @import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "bower_components/foundation-sites/scss/foundation.scss";
 @import "bower_components/motion-ui/motion-ui.scss";
 // endbower
 
@@ -71,23 +70,26 @@
 // DELETE THIS SECTION
 
 .readme {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: rem-calc(20);
-  font-weight: 200;
-  margin-top: rem-calc(50);
-  @include flex-grid-row;
-  @include flex-align($x: center);
-  .content {
-    width: 100%;
-    padding: rem-calc(40);
-    @include transition;
-    @include breakpoint(medium) {
-      width: rem-calc(400);
-      padding: rem-calc(60);
-      border-radius: rem-calc(6);
-      box-shadow: 0 rem-calc(10) rem-calc(50) rgba(38, 50, 56, 0.10);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: rem-calc(20);
+    font-weight: 200;
+    margin-top: rem-calc(50);
+    @include flex-grid-row;
+    @include flex-align($x: center);
+    .content {
+        width: 100%;
+        padding: rem-calc(40);
+        @include transition;
+        @include breakpoint(medium) {
+            width: rem-calc(400);
+            padding: rem-calc(60);
+            border-radius: rem-calc(6);
+            box-shadow: 0 rem-calc(10) rem-calc(50) rgba(38, 50, 56, 0.10);
+        }
+        ul {
+            margin-bottom: 0;
+        }
     }
-  }
 }
 
 // DELETE THIS SECTION
