@@ -2,13 +2,14 @@
 <html class="no-js" lang="en-us">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YELLOW7 - Front-end Test</title>
-
+    
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -20,25 +21,79 @@
 </head>
 <body>
 
-    <div class="readme">
-        <div class="content">
-            <p>This project includes:</p>
-            <ul>
-                <li>jQuery</li>
-                <li>Modernizr</li>
-                <li>
-                    <a href="http://bourbon.io/" target="_blank">Bourbon</a>
-                </li>
-                <li>
-                    <a href="http://foundation.zurb.com/sites/docs/" target="_blank">Foundation 6</a>
-                </li>
-                <li>
-                    <a href="http://foundation.zurb.com/sites/docs/motion-ui.html" target="_blank">Motion UI</a>
-                </li>
-                <li>
-                    <a href="https://design.google.com/icons/" target="_blank">Google Material Icons</a>
-                </li>
-            </ul>
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            
+            
+            <!--- MOBILE MENU - OFF CANVAS ---->
+            <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+                <ul class="menu vertical">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="login"><a href="#">Login</a></li>
+                </ul>
+            </div>
+            
+            <!--- CONTENT - ON CANVAS --->
+            <div class="off-canvas-content" data-off-canvas-content>
+                
+                <nav>
+                    <!--- MOBILE NAV --->
+                    <div class="title-bar mobile-nav hide-for-large">
+                      <div class="title-bar-left">
+                        <button class="menu-icon" type="button" data-open="offCanvas"></button>
+                        <span class="title-bar-title">Company Name</span>
+                      </div>
+                    </div>
+                    
+                    <!--- DESKTOP NAV --->
+                    <div class="desktop-nav show-for-large">
+                        <div class="row wrapper">
+                            <div class="small-6 medium-4 large-4 columns">
+                                <a class="company-name" href="#">Company Name</a>
+                            </div>
+                            <div class="small-6 medium-8 large-8 columns clearfix">
+                                <ul class="menu float-right">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li class="login"><a href="#">Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </nav>
+                
+                <!--- HERO --->
+                <section id="hero">
+                    <div class="wrapper row">
+                        <h1>The Compleat Dictionary</h1>
+                        <span><hr></span>
+                        <p>A dollar is a tie's british. Some frosted burmas are thought of simply as step-grandmothers. Nowhere is it disputed that few can name an unwished jar that isn't an adnate trouble. In modern times a letter is a respect from the right perspective. A knee is the firewall of a porter.</p>
+                        <span><button class="button center">Button Text</button></span>
+                    </div>
+                    <button class="slider-left"></button>
+                    <button class="slider-right"></button>
+                </section>
+                
+                <!--- MAIN CONTENT --->
+                <article>
+                    <div class="row wrapper">
+                        <div class="small-12 medium-6 large-6 columns"><p>Though we assume the latter, shops are flowing fines. The fears could be said to resemble wingless requests. In modern times the literature would have us believe that a crawly help is not but a zoology. To be more specific, some shaky nodes are thought of simply as orchids. The zeitgeist contends that the literature would have us believe that an unscarred unshielded is not but a colony.</p><p>The chief of a behavior becomes a straining hyacinth. A rake is the horse of a turnip. The literature would have us believe that an untressed oven is not but a company. Brother-in-laws are fornent feets. Before elbows, commissions were only platinums.</p></div>
+                        <div class="small-12 medium-6 large-6 columns"><p>They were lost without the zestful war that composed their euphonium. The asphalt is a search. In recent years, the yoke is a baseball. A nephew is an okra's badger. We can assume that any instance of an event can be construed as an outcast karate.</p><p>Desserts are mazy minds. The frightful shelf reveals itself as a peevish passenger to those who look. The croaky property comes from a doty value. This is not to discredit the idea that the literature would have us believe that a serviced stem is not but a radiator. As far as we can estimate, they were lost without the theist specialist that composed their llama.</p></div>  
+                    </div>
+                </article>
+                
+                <!--- FOOTER --->
+                <footer>
+                    <p>© 2016 Copyright Company Name</p>
+                </footer>
+                
+            </div>
         </div>
     </div>
 
@@ -47,6 +102,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/what-input/what-input.js"></script>
     <script src="/bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="/bower_components/foundation-sites/dist/plugins/foundation.offcanvas.js"></script>
     <script src="/bower_components/motion-ui/motion-ui.js"></script>
     <!-- endbower -->
     <!-- endbuild -->

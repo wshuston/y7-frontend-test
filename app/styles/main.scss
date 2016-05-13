@@ -27,10 +27,10 @@
 
 @include foundation-global-styles;
 @include foundation-flex-grid;
-// @include foundation-grid;
+@include foundation-grid;
 @include foundation-typography;
 // @include foundation-forms;
-// @include foundation-button;
+@include foundation-button;
 // @include foundation-accordion;
 // @include foundation-accordion-menu;
 // @include foundation-badge;
@@ -38,15 +38,15 @@
 // @include foundation-button-group;
 // @include foundation-callout;
 // @include foundation-close-button;
-// @include foundation-menu;
-// @include foundation-menu-icon;
+@include foundation-menu;
+@include foundation-menu-icon;
 // @include foundation-drilldown-menu;
 // @include foundation-dropdown;
 // @include foundation-dropdown-menu;
 // @include foundation-flex-video;
 // @include foundation-label;
-// @include foundation-media-object;
-// @include foundation-off-canvas;
+@include foundation-media-object;
+@include foundation-off-canvas;
 // @include foundation-orbit;
 // @include foundation-pagination;
 // @include foundation-progress-bar;
@@ -54,49 +54,272 @@
 // @include foundation-sticky;
 // @include foundation-reveal;
 // @include foundation-switch;
-// @include foundation-table;
-// @include foundation-tabs;
+@include foundation-table;
+@include foundation-tabs;
 // @include foundation-thumbnail;
-// @include foundation-title-bar;
+@include foundation-title-bar;
 // @include foundation-tooltip;
-// @include foundation-top-bar;
-// @include foundation-visibility-classes;
-// @include foundation-float-classes;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
 @include foundation-flex-classes;
-
-
-
-// =============================================================================
-// DELETE THIS SECTION
-
-.readme {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: rem-calc(20);
-    font-weight: 200;
-    margin-top: rem-calc(50);
-    @include flex-grid-row;
-    @include flex-align($x: center);
-    .content {
-        width: 100%;
-        padding: rem-calc(40);
-        @include transition;
-        @include breakpoint(medium) {
-            width: rem-calc(400);
-            padding: rem-calc(60);
-            border-radius: rem-calc(6);
-            box-shadow: 0 rem-calc(10) rem-calc(50) rgba(38, 50, 56, 0.10);
-        }
-        ul {
-            margin-bottom: 0;
-        }
-    }
-}
-
-// DELETE THIS SECTION
-// =============================================================================
-
 
 
 // -----------------------------------------------------------------------------
 // Add Your Code/Imports Here
 // -----------------------------------------------------------------------------
+
+$font: 'Roboto', sans-serif;
+
+$color-main: #fcc22e;
+$color-main-dark: #fe860c;
+$gray-1:#eceff1;
+$gray-2:#cfd8dc;
+$gray-3:#78909b;
+$gray-4:#879da7;
+$gray-5:#838785;
+
+body {
+    font-family: $font;
+    background-color:$gray-1;
+}
+
+.wrapper {
+    max-width:960px;
+}
+
+/*** MOBILE NAV ***/
+
+.mobile-nav {
+    background-color:white;
+    height:80px;
+    padding:0 0 0 10px;
+    
+    .title-bar-title {
+        font-size:18px;
+        font-weight: 300;
+        color:black;
+        line-height: 80px;
+        padding-left:40px;
+        background-image: url(../img/icon-fingerprint.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+    
+    .menu-icon {
+        &:hover::after {
+            background:$color-main;
+            -webkit-box-shadow:0 7px 0 $color-main, 0 14px 0 $color-main;
+            -moz-box-shadow:0 7px 0 $color-main, 0 14px 0 $color-main;
+            box-shadow:0 7px 0 $color-main, 0 14px 0 $color-main;
+        }
+        &::after {
+            background:black;
+            -webkit-box-shadow:0 7px 0 black, 0 14px 0 black;
+            -moz-box-shadow:0 7px 0 black, 0 14px 0 black;
+            box-shadow:0 7px 0 black, 0 14px 0 black;
+        }
+    }
+}
+
+.off-canvas {
+    background-color:$gray-1;
+    height:100%;
+    ul {
+        li {
+            background-color:white;
+            a {
+                padding:20px 10px;
+                color:black;
+                border-bottom:2px solid white;
+                
+                &:hover {
+                    border-bottom:2px solid $color-main;
+                    color:$color-main;
+                }
+            }
+        }
+        .login {
+            border-top:2px solid $gray-2;
+            background-color:$gray-1;
+            a {
+                border-bottom:2px solid $gray-1;
+                background-image: url(../img/icon-user.png);
+                background-repeat: no-repeat;
+                background-position:  90% 50%;
+                color:$gray-3;
+            }
+        }
+    }
+}
+
+/*** DESKTOP NAV ***/
+.desktop-nav {
+    border-bottom:2px solid $gray-5;
+    height:80px;
+    background-image: url(../img/header_bkg.jpg);
+    background-position: center;
+    background-size: cover;
+    
+    .company-name {
+        font-size:20px;
+        font-weight: 300;
+        display:block;
+        line-height: 80px;
+        padding-left:40px;
+        background-image: url(../img/icon-fingerprint.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+    
+    a {
+        color:black;
+        text-decoration: none;
+        line-height: 78px;
+        padding:0 20px;
+    }
+    
+    .menu {
+        background-color:white;
+        
+        li a {
+            color:black;
+            text-decoration: none;
+            line-height: 78px;
+            padding:0 20px;
+            border-bottom:2px solid $gray-5;
+            
+            &:hover {
+                color:$color-main;
+                border-bottom-color:$color-main;
+            }
+        }
+        li:nth-last-child(2) a {
+            padding-right:30px;
+        }
+        .login {
+            background-color:$gray-1;
+            -webkit-box-shadow: inset 2px 0px 0px 0px rgba(207,216,220,1);
+            -moz-box-shadow: inset 2px 0px 0px 0px rgba(207,216,220,1);
+            box-shadow: inset 2px 0px 0px 0px rgba(207,216,220,1);
+             
+            a {
+                background-image: url(../img/icon-user.png);
+                background-repeat: no-repeat;
+                background-position: 93% center;
+                color:$gray-3;
+                padding-right:40px;
+                padding-left:40px;
+            }
+        }
+    }
+}
+
+/*** HERO ***/
+
+#hero {
+    background-color:$gray-5;
+    background-image: url(../img/photo.jpg);
+    min-height:420px;
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: $font;
+    padding:50px 40px;
+    position: relative;
+    span {
+        display: block;
+        width:100%;
+    }
+    h1 {
+        color:white;
+        text-align: center;
+        font-weight: 300;
+        font-family: $font;
+        font-size:40px;
+        display:block;
+        width:100%;
+        -webkit-text-shadow: 0px 2px 2px rgba(38, 50, 56, 0.25);
+        -moz-text-shadow: 0px 2px 2px rgba(38, 50, 56, 0.25);
+        text-shadow: 0px 2px 2px rgba(38, 50, 56, 0.25);
+    }
+    
+    hr {
+        width:140px;
+        display:block;
+        border-bottom:2px solid $color-main;
+    }
+    p {
+        
+        font-family: $font;
+        color:white;
+        font-size:18px;
+        font-weight: 300;
+        display:block;
+        max-width:620px;
+        margin:auto;
+        text-align: center;
+        -webkit-text-shadow: 0px 2px 2px rgba(38, 50, 56, 0.25);
+        -moz-text-shadow: 0px 2px 2px rgba(38, 50, 56, 0.25);
+        text-shadow: 0px 2px 2px rgba(38, 50, 56, 0.25);
+    }
+    .button {
+        color:$color-main-dark;
+        display:block;
+        width:160px;
+        height:50px;
+        font-size: 18px;
+        font-weight: 500;
+        padding:0;
+        line-height: 50px;
+        background-color:$color-main;
+        border-radius:3px;
+        border-bottom:2px solid $color-main-dark;
+        margin:30px auto 0px;
+    }
+    &>button {
+        height:24px;
+        width:15px;
+        background-color: transparent;
+        border:none;
+        position: absolute;
+        top:50%;
+    }
+    .slider-left {
+        background-image: url(../img/icon-arrow-left.png);
+        left:2%;
+    }
+    .slider-right {
+        background-image: url(../img/icon-arrow-right.png);
+        right:3%;
+    }
+    
+}
+
+/*** MAIN CONTENT ***/
+
+article {
+    margin:40px 0px;
+    .row .columns {
+        margin:20px 0px;
+    }
+}
+
+/*** FOOTER ***/
+
+footer {
+    border-top:2px solid $gray-2;
+    background-color:$gray-1;
+    height:150px;
+    padding:0;
+    overflow: hidden;
+    
+    p {
+        text-align: center;
+        line-height: 140px;
+        font-weight:400;
+        font-size:10px;
+        color:$gray-4;
+    }
+}
