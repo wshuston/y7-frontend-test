@@ -100,3 +100,238 @@
 // -----------------------------------------------------------------------------
 // Add Your Code/Imports Here
 // -----------------------------------------------------------------------------
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic);
+
+@import "mixins/flexbox";
+// @import "bootstrap";
+
+$y7-yellow: rgb(254, 198, 1);
+$y7-orange: rgb(255, 110, 0);
+$y7-gray: rgb(236, 239, 241);
+$y7-dark-gray: darken($y7-gray, 20%);
+$y7-blue-gray: rgb(119, 144, 156);
+
+// media query breakpoints - I like to do the responsive work in with the rest of it. 
+$phone: "only screen and (max-width: 767px)";
+$tablet: "only screen and (min-width: 768px)";
+$laptop: "only screen and (min-width: 992px)";
+$desktop: "only screen and (min-width: 1200px)";
+
+body {
+    width: 100%;
+    * {
+        @include flex(0 1 auto); // to prevent IE 10 from applying it's default
+        font-family: 'Roboto', sans-serif;
+    }
+    a {
+        color: #666;
+        &:hover {
+            color: $y7-yellow;
+        }
+    }
+}
+
+header {
+    width: 100%;
+    @include flexbox();
+    flex-flow: row wrap;
+    align-items: center;
+    .login {
+        @include flex(1 0 auto);
+        padding-left: 15px;
+        background-color: $y7-gray;
+        line-height: 80px;
+        border-left: 2px solid darken($y7-gray, 15%);
+        a {
+            padding: 1.932rem 1rem;
+            position: relative;
+            color: $y7-blue-gray;
+            &:hover {
+                text-shadow: 0 0 1px $y7-blue-gray;
+            }
+            &:after {
+                content: url('../img/icon-user.png');
+                position: absolute;
+                right: -10px;
+                bottom: -4px;
+            }
+        }
+    }
+}
+
+nav {
+    @include flexbox();
+    @include flex(2 0 auto);
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 10%;
+    height: 80px;
+
+    // Why do responsive work like this? It's handy not to have to leave this spot to see what I'm working with in the main styles and other breakpoints.
+    @media #{$phone} {
+        @include flex(0 1 auto);
+        margin-left: auto;
+    }
+    .nav-logo {
+        @include flex(1 0 auto);
+        h3 {
+            font-size: 18px;
+            font-weight: 300;
+            position: relative;
+            @media #{$phone} {
+                margin-left: 35px;
+                margin-top: 5px;  
+            }
+            &:before {
+                content: url('../img/icon-fingerprint.png');
+                position: absolute;
+                left: -30px;
+                top: -5px;
+            }
+        }
+    }
+    .nav {
+        @include flexbox();
+        @include flex(2 0 auto);
+        list-style: none;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 0;
+        li {
+            // width: 100%;
+            a {
+                padding: 1.932rem 1rem;
+                max-width: 75px;
+                &:hover {
+                    background-color: $y7-gray;
+                }
+                &.active {
+                    color: $y7-yellow;
+                    position: relative;
+                    &:after {
+                        content: ' ';
+                        height: 2px;
+                        width: 100%;
+                        border-bottom: 2px solid $y7-yellow;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+                @media #{$phone} {
+                    padding: 0.6rem 1rem;        
+                }
+            }
+        }
+    }
+}
+
+.gyro {
+    @include flexbox();
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: url(../img/photo.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    .gyro-meat {
+        @include flex(0 1 50%);
+        text-align: center;
+        @include flexbox();
+        flex-flow: column nowrap;
+        @media #{$phone} {
+            @include flex(1 0 60%);
+        }
+        h1 {
+            font-weight: 300;
+        }
+        h1, p {
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+        .yellow-line {
+            height: 2px;
+            width: 140px;
+            background-color: $y7-yellow;
+            margin: 0 auto;
+        }
+        button {
+            padding: 20px;
+            border: 1px solid $y7-orange;
+            border-radius: 5px;
+            font-weight: bold;
+            color: $y7-orange;
+            background-color: $y7-yellow;
+        }
+    }
+    .arrow {
+        @include flex(1 1 auto);
+        @include flexbox();
+        align-items: center;
+        a {
+            width: 100%;
+            padding: 15px;  
+        }
+    }
+    .left {
+        a {
+            text-align: left;
+        }
+    }
+    .right {
+        a {
+            text-align: right;
+        }
+    }
+}
+
+section {
+    @include flexbox();
+    width: 100%;
+    padding-top: 60px;
+    article {
+        margin-left: auto;
+        margin-right: auto;
+        @include flexbox();
+        flex-flow: row wrap;
+        @media #{$phone} {
+            width: auto;
+        }
+        @media #{$tablet} {
+            width: 750px;
+        }
+        @media #{$laptop} {
+            width: 970px;
+        }
+        @media #{$desktop} {
+            width: 1170px;
+        }
+        p {
+            @include flex(1 0 460px);
+            padding: 10px;
+            @media #{$phone} {
+                @include flex(1 0 100%);
+            }
+        }
+    }
+}
+
+footer {
+    @include flexbox();
+    align-items: center;
+    background-color: $y7-gray;
+    height: 150px;
+    text-align: center;
+    border-top: 1px solid $y7-dark-gray;
+    p {
+        color: $y7-dark-gray;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+    }
+}

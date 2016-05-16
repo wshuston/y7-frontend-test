@@ -19,28 +19,75 @@
     <!-- endbuild -->
 </head>
 <body>
-
-    <div class="readme">
-        <div class="content">
-            <p>This project includes:</p>
-            <ul>
-                <li>jQuery</li>
-                <li>Modernizr</li>
-                <li>
-                    <a href="http://bourbon.io/" target="_blank">Bourbon</a>
-                </li>
-                <li>
-                    <a href="http://foundation.zurb.com/sites/docs/" target="_blank">Foundation 6</a>
-                </li>
-                <li>
-                    <a href="http://foundation.zurb.com/sites/docs/motion-ui.html" target="_blank">Motion UI</a>
-                </li>
-                <li>
-                    <a href="https://design.google.com/icons/" target="_blank">Google Material Icons</a>
-                </li>
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <h3>Company Name</h3>
+            </div>
+            <ul class="nav">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <!-- People hate hamburger menus. They are a good 
+                solution for where to tuck certain items away,
+                but overall people don't like looking for what
+                they can't see. Therefore, keep the essential 
+                nav components visible on mobile. -->
             </ul>
+        </nav>
+        <div class="login">
+            <a href="#">Login</a>
+            <!-- On mobile, this is wrapped under the nav.
+                The reason being that once they log in, the
+                user account links populate in that space. Maybe
+                even add a "swipe to login" type of function for
+                added effect. -->
+        </div>
+    </header>
+
+    <div class="gyro">
+        <div class="left arrow">
+            <a href="#"><img src="img/icon-arrow-left.png" alt=""></a>
+        </div>
+        <div class="gyro-meat">
+            <h1>The Compleat Dictionary</h1>
+            <div class="yellow-line"></div>
+            <p>
+                A dollar is a tie's british. Some frosted burmas are thought of simply as step-grandmothers. Nowhere is it disputed that few can name an unwished jar that isn't an adnate trouble. In modern times a letter is a respect from the right perspective. A knee is the firewall of a porter.
+            </p>
+            <div class="cta">
+                <button>Button Text</button>
+            </div>
+        </div>
+        <div class="right arrow">
+            <a href="#"><img src="img/icon-arrow-right.png" alt=""></a>
         </div>
     </div>
+
+    <section>
+        <article>
+            <!-- Why FlexBox is kickass. No need for rows and columns in the tradional sense for html. Instead, this 
+            <article> is treated as one column that wraps these paragraphs into 2 columns based on the <p>'s max width.
+            And, it's semantic af wrapped in a <section>. -->
+            <p>
+                Though we assume the latter, shops are flowing fines. The fears could be said to resemble wingless requests. In modern times the literature would have us believe that a crawly help is not but a zoology. To be more specific, some shaky nodes are thought of simply as orchids. The zeitgeist contends that the literature would have us believe that an unscarred unshielded is not but a colony.
+            </p>
+            <p>
+                The chief of a behavior becomes a straining hyacinth. A rake is the horse of a turnip. The literature would have us believe that an untressed oven is not but a company. Brother-in-laws are fornent feets. Before elbows, commissions were only platinums.
+            </p>
+            <p>
+                They were lost without the zestful war that composed their euphonium. The asphalt is a search. In recent years, the yoke is a baseball. A nephew is an okra's badger. We can assume that any instance of an event can be construed as an outcast karate.
+            </p>
+            <p>
+                Desserts are mazy minds. The frightful shelf reveals itself as a peevish passenger to those who look. The croaky property comes from a doty value. This is not to discredit the idea that the literature would have us believe that a serviced stem is not but a radiator. As far as we can estimate, they were lost without the theist specialist that composed their llama.
+            </p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2016 Copyright Company Name</p>
+    </footer>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
